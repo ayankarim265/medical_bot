@@ -1,0 +1,46 @@
+query,answer,is_correct,latency_sec,relevance
+What are the early symptoms of anemia?,"The provided context states that a complete blood count (CBC) can indicate the presence of conditions like anemia sometimes before the patient experiences symptoms of the disease. However, it does not list the early symptoms of anemia.
+
+Common early symptoms of anemia often include:
+*   Fatigue and weakness
+*   Pale or yellowish skin
+*   Shortness of breath
+*   Dizziness or lightheadedness
+*   Cold hands and feet
+*   Headaches",True,3.505,8.72
+Explain Acromegaly and Gigantism.,"Acromegaly and Gigantism are both conditions caused by excessive production of growth hormone (GH) by the pituitary gland. The key difference between them lies in the age at which the excess GH production begins.
+
+*   **Gigantism** occurs when there is an overproduction of growth hormone *before* the growth plates (epiphyseal plates) in the long bones have fused, typically during childhood or adolescence. This leads to excessive growth in height, resulting in individuals who are unusually tall, often reaching heights significantly above average. They also experience generalized overgrowth of tissues and organs.
+
+*   **Acromegaly** occurs when there is an overproduction of growth hormone *after* the growth plates have fused, typically in adulthood. Since the long bones can no longer grow in length, the excess growth hormone causes bones and soft tissues to enlarge in other areas of the body. Common signs include enlargement of the hands and feet, thickening of facial features (e.g., jaw, nose, forehead), and enlargement of internal organs. Other symptoms can include joint pain, headaches, sweating, and carpal tunnel syndrome.",True,3.987,9.24
+What causes Vitamin D deficiency?,"The provided context discusses acromegaly and gigantism, not Vitamin D deficiency.
+
+Vitamin D deficiency can be caused by several factors, including:
+*   **Insufficient sun exposure:** The skin produces Vitamin D when exposed to sunlight (UVB radiation).
+*   **Inadequate dietary intake:** Not consuming enough Vitamin D-rich foods (like fatty fish, fortified milk, and cereals).
+*   **Malabsorption:** Conditions that impair fat absorption in the gut (e.g., Crohn's disease, celiac disease, cystic fibrosis, or certain types of bariatric surgery) can lead to Vitamin D deficiency, as Vitamin D is a fat-soluble vitamin.
+*   **Kidney or liver disease:** These organs are essential for converting Vitamin D into its active form.
+*   **Certain medications:** Some drugs can interfere with Vitamin D metabolism.
+*   **Obesity:** Body fat can sequester Vitamin D, making it less available in the bloodstream.
+*   **Darker skin pigmentation:** Individuals with darker skin have more melanin, which reduces the skin's ability to produce Vitamin D from sunlight.",False,5.032,9.32
+What are the complications of diabetes mellitus?,"The provided context does not contain information about the complications of diabetes mellitus.
+
+However, based on medical knowledge, diabetes mellitus can lead to a range of serious complications if not well-managed. These can be broadly categorized as:
+
+*   **Cardiovascular Disease:** Increased risk of heart attack, stroke, and peripheral artery disease.
+*   **Kidney Disease (Diabetic Nephropathy):** Can lead to kidney failure requiring dialysis or transplant.
+*   **Eye Disease (Diabetic Retinopathy):** Damage to the blood vessels in the retina, potentially leading to vision loss and blindness.
+*   **Nerve Damage (Diabetic Neuropathy):** Can affect various parts of the body, causing:
+    *   **Peripheral neuropathy:** Numbness, tingling, pain, or weakness in the hands and feet.
+    *   **Autonomic neuropathy:** Problems with digestion, bladder function, sexual function, and blood pressure regulation.
+*   **Foot Problems:** Due to nerve damage and poor blood flow, minor cuts or blisters can become serious infections and may lead to amputation.
+*   **Skin Conditions:** Increased susceptibility to bacterial and fungal infections.
+*   **Dental Problems:** Higher risk of gum disease and other oral infections.",True,4.795,9.0
+How is asthma diagnosed?,"Asthma is typically diagnosed based on a combination of factors, including:
+
+*   **Medical History:** Your doctor will ask about your symptoms (such as wheezing, shortness of breath, chest tightness, and coughing), when they occur, what triggers them, and your family history of asthma or allergies.
+*   **Physical Exam:** A physical examination, including listening to your lungs, can help rule out other conditions.
+*   **Lung Function Tests:**
+    *   **Spirometry:** This is the most common test. You breathe into a device that measures how much air you can exhale and how quickly you can do it. It helps assess how well your lungs are working and if there's any airway obstruction.
+    *   **Bronchoprovocation Tests:** If spirometry results are normal but asthma is still suspected, you might undergo a test where you inhale a substance (like methacholine) or exercise to see if it triggers asthma symptoms and a drop in lung function.
+*   **Other Tests:** Allergy tests may be performed to identify potential triggers, and a chest X-ray might be done to rule out other lung conditions.",True,5.403,8.88

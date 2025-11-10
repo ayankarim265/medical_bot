@@ -1,0 +1,53 @@
+# ==========================================
+# 🧠 .gitignore for Flask + Streamlit + AI Projects
+# ==========================================
+
+# 🔒 Environment and Secret Files
+.env
+*.env
+.env.*
+
+# 🧩 Python cache / bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+
+# 💾 Database files
+instance/
+database.db
+
+# 🧠 Model files (if any)
+*.ckpt
+*.h5
+*.pt
+*.bin
+*.onnx
+
+# 📦 Virtual Environments
+venv/
+env/
+.medbot/
+.medical_bot_env/
+*.egg-info/
+*.egg
+
+# 🧾 Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+*.sqlite3
+
+# 🖼️ OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ⚙️ Streamlit / Render configurations
+.streamlit/secrets.toml
+
+# 📓 Jupyter / Colab
+.ipynb_checkpoints/

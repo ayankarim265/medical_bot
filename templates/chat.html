@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Medical Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="main-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>💬 Chats</h2>
+            <a href="{{ url_for('new_session') }}" class="new-chat-btn">+ New</a>
+        </div>
+        <ul class="session-list">
+            {% for sess in sessions %}
+                <li class="{% if sess.id == active_session.id %}active{% endif %}">
+                    <a href="{{ url_for('switch_session', session_id=sess.id) }}">{{ sess.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </aside>
+
+    <!-- Chat Area -->
+    <section class="chat-section">
+        <header class="chat-header">
+            <h1>🩺 AI Medical Assistant</h1>
+            <div class="profile">
+                <a href="{{ url_for('profile') }}">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile Icon" class="profile-icon">
+                </a>
+            </div>
+        </header>
+
+        <main id="chat-box" class="chat-box">
+            {% for chat in chats %}
+                <div class="message {{ chat.sender }}">
+                    <p>{{ chat.message }}</p>
+                    <div class="meta">✓ <span class="time">{{ chat.timestamp.strftime("%I:%M %p") }}</span></div>
+                </div>
+            {% endfor %}
+        </main>
+
+        <form id="chat-form" class="input-area">
+            <input type="text" id="user-input" name="msg" placeholder="Type your message..." autocomplete="off" required>
+            <button type="submit" id="send-btn">Send</button>
+        </form>
+    </section>
+</div>
+
+<script>
+const form = document.getElementById("chat-form");
+const chatBox = document.getElementById("chat-box");
+const userInput = document.getElementById("user-input");
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const msg = userInput.value.trim();
+    if (!msg) return;
+
+    const msgDiv = document.createElement("div");
+    msgDiv.classList.add("message", "user");
+    msgDiv.innerHTML = `<p>${msg}</p><div class='meta'>✓ <span class='time'>${new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}</span></div>`;
+    chatBox.appendChild(msgDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+    userInput.value = "";
+
+    const formData = new FormData();
+    formData.append("msg", msg);
+
+    const response = await fetch("/get", { method: "POST", body: formData });
+    const data = await response.text();
+
+    const botDiv = document.createElement("div");
+    botDiv.classList.add("message", "bot");
+    botDiv.innerHTML = `<p>${data}</p><div class='meta'>✓✓ <span class='time'>${new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}</span></div>`;
+    chatBox.appendChild(botDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+});
+</script>
+</body>
+</html>

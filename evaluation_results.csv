@@ -1,0 +1,5 @@
+Metric,Description,Result
+Factual Precision,"Correct, medically accurate responses",100.00%
+Response Relevance,High coherence and completeness,8.89 / 10
+Factual Errors,Incorrect or missing answers,0
+Average Latency,Average response time per query,5.18 s

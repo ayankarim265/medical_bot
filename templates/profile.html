@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - AI Medical Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="profile-body">
+    <div class="profile-container">
+        <div class="profile-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile Icon" class="profile-pic">
+            <h1>{{ user.username }}</h1>
+
+            <p><strong>User ID:</strong> {{ user.id }}</p>
+            <p><strong>Total Chats:</strong> {{ total_chats }}</p>
+            <p><strong>Joined On:</strong> {{ user.created_at.strftime("%d %B %Y, %I:%M %p") }}</p>
+
+            <div class="profile-buttons">
+                <a href="{{ url_for('chat') }}" class="btn back-btn">⬅ Back to Chat</a>
+                <a href="{{ url_for('logout') }}" class="btn logout-btn">Logout</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
