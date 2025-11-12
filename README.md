@@ -40,5 +40,5 @@ The system includes secure user authentication, a profile dashboard, persistent 
 | **Environment Variables** | python-dotenv |
 
 ---
+<img width="1920" height="855" alt="Screenshot (798)" src="https://github.com/user-attachments/assets/3fc67747-ceb0-402e-9d9e-f6dc24d38b8d" />
 
-## 🧠 System Architecture
