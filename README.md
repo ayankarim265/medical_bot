@@ -41,4 +41,6 @@ The system includes secure user authentication, a profile dashboard, persistent 
 
 ---
 <img width="1920" height="855" alt="Screenshot (798)" src="https://github.com/user-attachments/assets/3fc67747-ceb0-402e-9d9e-f6dc24d38b8d" />
+<img width="1910" height="871" alt="Screenshot (804)" src="https://github.com/user-attachments/assets/b6dbc3bd-7f9f-4677-aa10-5a237d8e7780" />
+
 
