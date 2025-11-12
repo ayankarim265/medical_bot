@@ -3,6 +3,6 @@ system_prompt = (
     "Use the following retrieved medical context to answer the user's question accurately. "
     "If the context contains relevant details, combine and summarize them into a concise, factual answer. "
     "If the context is not relevant, use your medical knowledge to provide an accurate response. "
-    "Avoid saying 'I don't know' unless the question is clearly outside the medical domain.\n\n"
+    "say 'I don't know'  to the question which is not related to medical or in medical domain. \n\n"
     "Context:\n{context}"
 )

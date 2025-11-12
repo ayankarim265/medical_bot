@@ -61,25 +61,60 @@ form.addEventListener("submit", async (e) => {
     const msg = userInput.value.trim();
     if (!msg) return;
 
+    // Display user's message
     const msgDiv = document.createElement("div");
     msgDiv.classList.add("message", "user");
-    msgDiv.innerHTML = `<p>${msg}</p><div class='meta'>✓ <span class='time'>${new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}</span></div>`;
+    msgDiv.innerHTML = `
+        <p>${msg}</p>
+        <div class='meta'>✓ 
+            <span class='time'>${new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}</span>
+        </div>`;
     chatBox.appendChild(msgDiv);
     chatBox.scrollTop = chatBox.scrollHeight;
     userInput.value = "";
 
-    const formData = new FormData();
-    formData.append("msg", msg);
-
-    const response = await fetch("/get", { method: "POST", body: formData });
-    const data = await response.text();
-
-    const botDiv = document.createElement("div");
-    botDiv.classList.add("message", "bot");
-    botDiv.innerHTML = `<p>${data}</p><div class='meta'>✓✓ <span class='time'>${new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}</span></div>`;
-    chatBox.appendChild(botDiv);
+    // Add typing indicator
+    const typingDiv = document.createElement("div");
+    typingDiv.classList.add("message", "bot", "typing");
+    typingDiv.innerHTML = `
+        <p><em>AI is typing<span class="dots">...</span></em></p>
+    `;
+    chatBox.appendChild(typingDiv);
     chatBox.scrollTop = chatBox.scrollHeight;
+
+    // Animate typing dots (...)
+    let dotCount = 0;
+    const typingInterval = setInterval(() => {
+        dotCount = (dotCount + 1) % 4;
+        typingDiv.querySelector(".dots").textContent = ".".repeat(dotCount);
+    }, 400);
+
+    try {
+        const formData = new FormData();
+        formData.append("msg", msg);
+
+        const response = await fetch("/get", { method: "POST", body: formData });
+        const data = await response.text();
+
+        // Stop typing animation and show real message
+        clearInterval(typingInterval);
+        typingDiv.remove();
+
+        const botDiv = document.createElement("div");
+        botDiv.classList.add("message", "bot");
+        botDiv.innerHTML = `
+            <p>${data}</p>
+            <div class='meta'>✓✓ 
+                <span class='time'>${new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}</span>
+            </div>`;
+        chatBox.appendChild(botDiv);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    } catch (error) {
+        clearInterval(typingInterval);
+        typingDiv.innerHTML = `<p><em>Error getting response.</em></p>`;
+    }
 });
 </script>
+
 </body>
 </html>

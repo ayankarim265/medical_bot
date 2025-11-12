@@ -478,3 +478,7 @@ body {
 .btn:hover {
     opacity: 0.9;
 }
+.typing p em {
+    color: #888;
+    font-style: italic;
+}
